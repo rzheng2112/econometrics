@@ -2,53 +2,70 @@
 
 Notes, code, and replication exercises for econometrics.
 
-## How to Work with JupyterLab
+## Working with JupyterLab (Anaconda)
 
-### Open JupyterLab
+### 1. Open the project
 
 ```bash
 cd ~/github/econometrics
+```
+
+---
+
+### 2. Activate Anaconda environment
+
+```bash
+conda activate base
+```
+
+Make sure your terminal prompt shows `(base)`.
+
+---
+
+### 3. Start JupyterLab
+
+```bash
 jupyter lab
 ```
 
-JupyterLab will open in the browser.
-All notebooks created here are part of this GitHub repository.
+JupyterLab will open in your browser.
+All notebooks created here are saved inside this repository.
 
 ---
 
-### Sync changes to GitHub
+### 4. Create a notebook
 
-After editing notebooks or code:
+* JupyterLab → **New → Python 3**
+* Name the notebook (e.g. `ps1.ipynb`)
+* Save (`Cmd + S`)
+
+---
+
+### 5. Upload notebook to GitHub
+
+After editing files:
 
 ```bash
 git status
-git add .
-git commit -m "Describe changes"
-git push
-```
-
----
-
-### Update local files if GitHub changes
-
-```bash
-git pull
-```
-### Upload a Jupyter Notebook (e.g. `ps1.ipynb`)
-
-1. Save the notebook in JupyterLab (`Cmd + S`)
-2. Go to the project folder:
-
-```bash
-cd ~/github/econometrics
-```
-
-3. Upload to GitHub:
-
-```bash
 git add ps1.ipynb
 git commit -m "Add or update PS1 notebook"
 git push
 ```
+
+---
+
+### 6. If GitHub files were updated online
+
+```bash
+git pull
+```
+
+---
+
+### Notes
+
+* JupyterLab is provided by Anaconda
+* Always activate conda before running Jupyter
+* Git does not auto-sync; you must commit and push
 
 
