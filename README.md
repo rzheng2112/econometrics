@@ -12,7 +12,7 @@ Follow the steps below exactly to avoid sync issues.
 ### 1. Open the project in Terminal
 
 ```bash
-cd /Users/zhengrudan/Documents/GitHub/github/econometrics
+cd /Users/zhengrudan/Documents/GitHub/econometrics
 ```
 
 Confirm:
