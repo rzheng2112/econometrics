@@ -2,23 +2,34 @@
 
 Notes, code, and replication exercises for econometrics.
 
-## Working with JupyterLab (Anaconda)
+## Workflow Guide (Anaconda + JupyterLab + GitHub)
 
-### 1. Open the project
+This repository is managed with **Git**, **JupyterLab (Anaconda)**, and may be stored inside **iCloud Drive**.
+Follow the steps below exactly to avoid sync issues.
+
+---
+
+### 1. Open the project in Terminal
 
 ```bash
-cd ~/github/econometrics
+cd /Users/zhengrudan/Documents/GitHub/github/econometrics
+```
+
+Confirm:
+
+```bash
+pwd
 ```
 
 ---
 
-### 2. Activate Anaconda environment
+### 2. Activate Anaconda
 
 ```bash
 conda activate base
 ```
 
-Make sure your terminal prompt shows `(base)`.
+Make sure your prompt shows `(base)`.
 
 ---
 
@@ -28,44 +39,77 @@ Make sure your terminal prompt shows `(base)`.
 jupyter lab
 ```
 
-JupyterLab will open in your browser.
-All notebooks created here are saved inside this repository.
+JupyterLab will open in the browser.
+All notebooks are saved **inside this repository**.
 
 ---
 
-### 4. Create a notebook
+### 4. Create and save a notebook
 
-* JupyterLab → **New → Python 3**
-* Name the notebook (e.g. `ps1.ipynb`)
+* JupyterLab → New → Python 3
+* Name the file (e.g. `econ_633_ps1.ipynb`)
 * Save (`Cmd + S`)
 
 ---
 
-### 5. Upload notebook to GitHub
+### 5. Upload changes to GitHub
 
-After editing files:
+Always run these commands **from Terminal**, not from Jupyter’s terminal.
 
 ```bash
 git status
-git add ps1.ipynb
-git commit -m "Add or update PS1 notebook"
+git add .
+git commit -m "Describe changes"
+git pull --no-rebase
+git push
+```
+
+If an editor opens during `git pull` or `git commit`:
+
+* `Ctrl + O` → Enter (save)
+* `Ctrl + X` (exit)
+
+---
+
+### 6. If `git push` is rejected
+
+This means GitHub has newer commits.
+
+Fix with:
+
+```bash
+git pull --no-rebase
 git push
 ```
 
 ---
 
-### 6. If GitHub files were updated online
+### 7. Ignore Jupyter and macOS junk files
 
-```bash
-git pull
-```
+This repository ignores:
+
+* `.ipynb_checkpoints/`
+* `.DS_Store`
+
+Do **not** upload them.
 
 ---
 
-### Notes
+### 8. iCloud Drive note (important)
 
-* JupyterLab is provided by Anaconda
-* Always activate conda before running Jupyter
-* Git does not auto-sync; you must commit and push
+If this folder is inside iCloud Drive:
 
+* Right-click the repo folder
+* Select **“Keep Downloaded”**
+
+Do **not** manually remove the `.git` folder from local storage.
+
+---
+
+### Golden rules
+
+* Always `git pull` before starting work
+* Always save notebooks before committing
+* Never force-push
+* Git commands only work inside the repo folder
 
